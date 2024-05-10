@@ -1,0 +1,47 @@
+
+
+// tic tac toe
+
+
+
+// const winner = [
+      //   [0, 1, 2],
+      //   [3, 4, 5],
+      //   [6, 7, 8],
+      //   [0, 3, 6],
+      //   [1, 4, 7],
+      //   [2, 5, 8],
+      //   [0, 4, 8],
+      //   [2, 4, 6]
+      // ];
+
+// function checking() {
+      //   let container = xInputs;
+      //   let checker = [];
+      //   for (let i = 0; i < 8; i++) {
+      //     let check1 = false;
+      //     let check2 = false;
+      //     let check3 = false;
+      //     // console.log(winner[i][0]);
+      //     for (let j = 0; j < container.length; j++) {
+      //       if(winner[i][0]===container[j]);
+      //       check1=true;
+      //     }
+      //     console.log(check1)
+      //     for (let j = 0; j < container.length; j++) {
+      //       if(winner[i][1]===container[j]);
+      //       check2=true;
+      //     }
+      //     console.log(check2)
+      //     for (let j = 0; j < container.length; j++) {
+      //       if(winner[i][2]===container[j]);
+      //       check3=true;
+      //     }
+      //     console.log(check3)
+
+      //     // console.log(winner[i][1]);
+      //     // console.log(winner[i][2]);
+
+      //   }
+
+      // }

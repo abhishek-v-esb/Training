@@ -1,0 +1,104 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="getData()">
+    <div id="holder" class="container"></div>
+    <button onclick="commentClick(this)" id="btn">Comments</button>
+    <div id="comments"></div>
+    <script>
+      let users;
+      let posts;
+      let mainDiv = document.getElementById("holder");
+      let commentDiv = document.getElementById("comments");
+      const urlUser = "https://jsonplaceholder.typicode.com/users";
+      const urlPost = "https://jsonplaceholder.typicode.com/posts";
+      const urlComment = "https://jsonplaceholder.typicode.com/comments";
+
+      const queryString = new URLSearchParams(window.location.search);
+      const postId = queryString.get("id");
+      const userId = queryString.get("userid");
+
+      function getData() {
+        fetcher(urlPost, "Post");
+        fetcher(urlUser, "User");
+      }
+
+      function fetcher(url, type) {
+        fetch(url)
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            users = data;
+            // console.log(users);
+            addData(users, type);
+            // addData(posts, pageNum);
+          })
+
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
+      function addData(data, type) {
+        // console.log(type);
+        let div = document.createElement("div");
+        let h2 = document.createElement("h2");
+        h2.innerHTML = type;
+        div.appendChild(h2);
+        data.forEach((element) => {
+          switch (type) {
+            case "Post":
+              if (element.id == postId) {
+                for (const keys in element) {
+                  let p = document.createElement("p");
+                  p.innerHTML = `${keys} : ${JSON.stringify(element[keys])}`;
+                  div.appendChild(p);
+                  mainDiv.appendChild(div);
+                }
+              }
+
+              break;
+            case "User":
+              if (element.id == userId) {
+                for (const keys in element) {
+                  let p = document.createElement("p");
+                  p.innerHTML = `${keys} : ${JSON.stringify(element[keys])}`;
+                  div.appendChild(p);
+                  mainDiv.appendChild(div);
+                }
+              }
+
+              break;
+            case "Comment":
+              if (element.postId == postId) {
+                for (const keys in element) {
+                  let p = document.createElement("p");
+                  p.innerHTML = `${keys} : ${JSON.stringify(element[keys])}`;
+                  div.appendChild(p);
+                  commentDiv.appendChild(div);
+                }
+              }
+
+              break;
+
+            default:
+              break;
+          }
+        });
+        if (type == "Comment") {
+        } else {
+        }
+        // console.log(posts);
+      }
+
+      function commentClick(element) {
+        element.remove();
+
+        fetcher(urlComment, "Comment");
+      }
+    </script>
+  </body>
+</html>

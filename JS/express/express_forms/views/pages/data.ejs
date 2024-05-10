@@ -1,0 +1,32 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <th>First Name:</th>
+        <th>Last Name:</th>
+        <th>Age:</th>
+        <th>Number:</th>
+        <th></th>
+      </tr>
+      <%usersjson.forEach(function (element) {%>
+      <tr>
+        <td style="width: 100px"><%=element.fname%></td>
+        <td style="width: 100px"><%=element.lname%></td>
+        <td style="width: 100px"><%=element.age%></td>
+        <td style="width: 100px"><%=element.number%></td>
+        <td>
+          <form accept="/details/<%=element.id%>" method="post">
+            <input type="submit" value="details" />
+          </form>
+        </td>
+      </tr>
+
+      <% }); %>
+    </table>
+  </body>
+</html>

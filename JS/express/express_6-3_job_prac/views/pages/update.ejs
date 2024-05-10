@@ -1,0 +1,918 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>job Application</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <%let compCount = 0%><%let refCount= 0%>
+
+    <div id="container">
+      <h3>
+        <center><u>Job Application</u></center>
+      </h3>
+      <form
+        id="form"
+        action="/update?id=<%=id%>"
+        method="POST"
+        onsubmit="return validate()"
+      >
+        <input
+          hidden
+          type="text"
+          name="hiddenid"
+          id="hiddenId"
+          value="<%=id%>"
+        />
+        <div id="basic-details">
+          <fieldset>
+            <legend>
+              <h3><em>Basic details</em></h3>
+            </legend>
+            <table>
+              <tr>
+                <td>
+                  <label for="firstname"
+                    >First Name<span class="redstar"><sup>*</sup></span
+                    >:</label
+                  >
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id=""
+                    tabindex="1"
+                    name="firstname"
+                    value="<%=data.employee.first_name%>"
+                    autofocus
+                  />
+                  <span class="error"><p id="firstname_error"></p></span>
+                </td>
+                <td>
+                  <label for="lastname"
+                    >Last Name<span class="redstar"><sup>*</sup></span
+                    >:</label
+                  >
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="lastname"
+                    tabindex="2"
+                    name="lastname"
+                    value="<%=data.employee.last_name%>"
+                  />
+                  <span class="error"><p id="lastname_error"></p></span>
+                </td>
+                <td>
+                  <label for="designation"
+                    >Designation<span class="redstar"><sup>*</sup></span
+                    >:</label
+                  >
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="designation"
+                    tabindex="3"
+                    name="designation"
+                    value="<%=data.employee.emp_designation%>"
+                  />
+                  <span class="error"><p id="designation_error"></p></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="address1"
+                    >Address 1<span class="redstar"><sup>*</sup></span
+                    >:</label
+                  >
+                </td>
+                <td>
+                  <textarea
+                    rows="5"
+                    cols="50"
+                    id="address1"
+                    name="address1"
+                    tabindex="4"
+                  >
+<%=data.employee.address1%></textarea
+                  >
+                  <span class="error"><p id="address1_error"></p></span>
+                </td>
+                <td>
+                  <label for="address2"
+                    >Address 2<span class="redstar"><sup>*</sup></span
+                    >:</label
+                  >
+                </td>
+                <td>
+                  <textarea
+                    rows="5"
+                    cols="50"
+                    id="address2"
+                    name="address2"
+                    tabindex="5"
+                  >
+<%=data.employee.address2%></textarea
+                  >
+                  <span class="error"><p id="address2_error"></p></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="email"
+                    >Email<span class="redstar"><sup>*</sup></span
+                    >:</label
+                  >
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    tabindex="6"
+                    id="email"
+                    placeholder="xyz@email.com"
+                    name="email"
+                    value="<%=data.employee.email%>"
+                  />
+                  <span class="error"><p id="email_error"></p></span>
+                </td>
+                <td>
+                  <label for="phone"
+                    >Phone<span class="redstar"><sup>*</sup></span
+                    >:</label
+                  >
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    tabindex="7"
+                    id="phone"
+                    placeholder="0000000000"
+                    maxlength="14"
+                    name="phone"
+                    value="<%=data.employee.phone%>"
+                  />
+                  <span class="error"><p id="phone_error"></p></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="city"
+                    >City<span class="redstar"><sup>*</sup></span
+                    >:</label
+                  >
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="city"
+                    tabindex="8"
+                    name="city"
+                    value="<%=data.employee.city%>"
+                  />
+                  <span class="error"><p id="city_error"></p></span>
+                </td>
+                <td>
+                  <label for="state"
+                    >State<span class="redstar"><sup>*</sup></span
+                    >:</label
+                  >
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="state"
+                    tabindex="9"
+                    name="state"
+                    value="<%=data.employee.state%>"
+                  />
+                  <span class="error"><p id="state_error"></p></span>
+                </td>
+                <td>
+                  <label for="zipcode"
+                    >Zip code<span class="redstar"><sup>*</sup></span
+                    >:</label
+                  >
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="zipcode"
+                    tabindex="10"
+                    name="zipcode"
+                    value="<%=data.employee.zip_code%>"
+                  />
+                  <span class="error"><p id="zipcode_error"></p></span>
+                </td>
+              </tr>
+              <td>
+                <label for="dob"
+                  >Date of birth<span class="redstar"><sup>*</sup></span
+                  >:</label
+                >
+              </td>
+              <td>
+                <input
+                  tabindex="13"
+                  type="date"
+                  name="dob"
+                  id="dob"
+                  placeholder="dd-mm-yyyy"
+                  value="<%=data.employee.dob%>"
+                />
+                <span class="error"><p id="dob_error"></p></span>
+              </td>
+              <tr>
+                <td>
+                  <label for="gender"
+                    >Gender<span class="redstar"><sup>*</sup></span
+                    >:</label
+                  >
+                </td>
+                <td>
+                  <input type="radio" id="male" value="male" name="gender" />
+                  <label for="male">Male</label><br />
+                  <input
+                    type="radio"
+                    id="female"
+                    value="female"
+                    name="gender"
+                  />
+
+                  <%if(data.employee.gender=="female"){%>
+                  <script>
+                    document.getElementById("female").checked = true;
+                  </script>
+
+                  <%}else{%>
+                  <script>
+                    document.getElementById("male").checked = true;
+                  </script>
+                  <%}%>
+
+                  <label for="female">Female</label><br />
+                </td>
+                <td><label>Relationship status:</label></td>
+                <td>
+                  <select name="relationship" id="relationship">
+                    <option id="single" value="single">Single</option>
+                    <option id="married" value="married">Married</option>
+                  </select>
+
+                  <%if(data.employee.relationship_status=="married"){%>
+                  <script>
+                    document.getElementById("married").selected = true;
+                  </script>
+                  <%}else{%>
+                  <script>
+                    document.getElementById("single").selected = true;
+                  </script>
+                  <%}%>
+                </td>
+              </tr>
+            </table>
+          </fieldset>
+        </div>
+        <div id="education">
+          <fieldset>
+            <legend>
+              <h3><cite>Education</cite></h3>
+            </legend>
+
+            <div id="sscSec">
+              <table>
+                <td>
+                  <abbr title="Seconday School Certificate"><b>SSC</b></abbr>
+                </td>
+                <td><label for="boardname">Name of board:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="boardname"
+                    id="ssc"
+                    onkeyup="enableEdu(this)"
+                    value="<%=data.education.ssc.board_name%>"
+                  />
+                  <span class="error"><p id="ssc_error"></p></span>
+                </td>
+                <td><label for="passingyear">Passing year:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="passingyear"
+                    id="passingyearssc"
+                    value="<%=data.education.ssc.passing_year%>"
+                  />
+                  <span class="error"><p id="passingyearssc_error"></p></span>
+                </td>
+                <td>
+                  <label for="passingpercentage">Passing percentage:</label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    name="passingpercentage"
+                    id="passingpercentagessc"
+                    max="100"
+                    min="30"
+                    value="<%=data.education.ssc.passing_percentage%>"
+                  />
+                  <span class="error"
+                    ><p id="passingpercentagessc_error"></p
+                  ></span>
+                </td>
+              </table>
+            </div>
+            <hr />
+            <div id="hscSec">
+              <table>
+                <td>
+                  <abbr title="Higher School Certificate"><b>HSC</b></abbr>
+                </td>
+                <td><label for="boardname">Name of board:</label></td>
+
+                <td>
+                  <input
+                    type="text"
+                    name="boardname"
+                    id="hsc"
+                    onkeyup="enableEdu(this)"
+                    value="<%=data.education.hsc.board_name%>"
+                  />
+                  <span class="error"><p id="hsc_error"></p></span>
+                </td>
+                <td><label for="passingyear">Passing year:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="passingyear"
+                    id="passingyearhsc"
+                    value="<%=data.education.hsc.passing_year%>"
+                  />
+                  <span class="error"><p id="passingyearhsc_error"></p></span>
+                </td>
+                <td>
+                  <label for="passingpercentage">Passing percentage:</label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    name="passingpercentage"
+                    id="passingpercentagehsc"
+                    max="100"
+                    min="30"
+                    value="<%=data.education.hsc.passing_percentage%>"
+                  />
+                  <span class="error"
+                    ><p id="passingpercentagehsc_error"></p
+                  ></span>
+                </td>
+              </table>
+            </div>
+            <hr />
+            <div id="bachelorSec">
+              <table>
+                <td>
+                  <abbr><b>Bachelor</b></abbr>
+                </td>
+                <td>
+                  <label for="boardname">Name of Board:</label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    name="boardname"
+                    id="bachelor"
+                    onkeyup="enableEdu(this)"
+                    value="<%=data.education.bachelor.board_name%>"
+                  />
+                  <span class="error"><p id="bachelor_error"></p></span>
+                </td>
+                <td><label for="passingyear">Passing year:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="passingyear"
+                    id="passingyearbachelor"
+                    value="<%=data.education.bachelor.passing_year%>"
+                  />
+                  <span class="error"
+                    ><p id="passingyearbachelor_error"></p
+                  ></span>
+                </td>
+                <td>
+                  <label for="passingpercentage">Passing percentage:</label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    name="passingpercentage"
+                    id="passingpercentagebachelor"
+                    max="100"
+                    min="30"
+                    value="<%=data.education.bachelor.passing_percentage%>"
+                  />
+                  <span class="error"
+                    ><p id="passingpercentagebachelor_error"></p
+                  ></span>
+                </td>
+              </table>
+            </div>
+            <hr />
+            <div id="masterSec">
+              <table>
+                <td>
+                  <abbr><b>Master</b></abbr>
+                </td>
+                <td>
+                  <label for="boardname">Name of Board:</label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    name="boardname"
+                    id="master"
+                    onkeyup="enableEdu(this)"
+                    value="<%=data.education.master.board_name%>"
+                  />
+                  <span class="error"><p id="master_error"></p></span>
+                </td>
+                <td><label for="passingyear">Passing year:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="passingyear"
+                    id="passingyearmaster"
+                    value="<%=data.education.master.passing_year%>"
+                  />
+                  <span class="error"
+                    ><p id="passingyearmaster_error"></p
+                  ></span>
+                </td>
+                <td>
+                  <label for="passingpercentage">Passing percentage:</label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    name="passingpercentage"
+                    id="passingpercentagemaster"
+                    max="100"
+                    min="30"
+                    value="<%=data.education.master.passing_percentage%>"
+                  />
+                  <span class="error"
+                    ><p id="passingpercentagemaster_error"></p
+                  ></span>
+                </td>
+              </table>
+            </div>
+          </fieldset>
+        </div>
+        <div id="workExp">
+          <fieldset>
+            <legend>
+              <h3><i>Work experience</i></h3>
+            </legend>
+
+            <div class="company">
+              <table id="compTable">
+                <%for(const each in data.work){%> <%compCount++%>
+
+                <tr id="<%=compCount%>">
+                  <td><label for="company">Company:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      name="company"
+                      id="company<%=compCount%>"
+                      onkeyup="enableComp(this)"
+                      value="<%=data.work[each].company_name%>"
+                    />
+                    <span class="error"
+                      ><p id="company<%=compCount%>_error"></p
+                    ></span>
+                  </td>
+                  <td><label for="companydesignation">Designation:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      name="companydesignation"
+                      id="company<%=compCount%>designation"
+                      value="<%=data.work[each].work_designation%>"
+                    />
+                    <span class="error"
+                      ><p id="company<%=compCount%>designation_error"></p
+                    ></span>
+                  </td>
+                  <td><label for="companyfrom">From:</label></td>
+
+                  <td>
+                    <input
+                      type="date"
+                      name="companyfrom"
+                      id="company<%compCount%>from"
+                      placeholder="dd-mm-yyyy"
+                      value="<%=data.work[each].fromdate%>"
+                    />
+                    <span class="error"
+                      ><p id="company<%compCount%>from_error"></p
+                    ></span>
+                  </td>
+                  <td><label for="companyto">To:</label></td>
+                  <td>
+                    <input
+                      type="date"
+                      name="companyto"
+                      id="company<%compCount%>to"
+                      placeholder="dd-mm-yyyy"
+                      value="<%=data.work[each].todate%>"
+                    />
+                    <span class="error"
+                      ><p id="company<%compCount%>to_error"></p
+                    ></span>
+                  </td>
+                </tr>
+                <%}%>
+              </table>
+              <div>
+                <button onclick="addCompRow()" type="button">+</button>
+                <button onclick="removeCompRow()" type="button">-</button>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div id="language">
+          <fieldset>
+            <legend>
+              <h3>Language known</h3>
+            </legend>
+            <div id="lang_hindi">
+              <input
+                type="checkbox"
+                name="language"
+                id="hindi"
+                value="hindi"
+                onchange="checkLang(this)"
+              />
+              <label for="hindi">Hindi</label>
+              <input
+                type="checkbox"
+                name="hindi_efficiency[]"
+                id="hindiRead"
+                value="Read"
+              />
+              <label for="hindiRead">read</label>
+              <input
+                type="checkbox"
+                name="hindi_efficiency[]"
+                id="hindiWrite"
+                value="Write"
+              />
+              <label for="hindiWrite">speak</label>
+              <input
+                type="checkbox"
+                name="hindi_efficiency[]"
+                id="hindiSpeak"
+                value="Speak"
+              />
+              <label for="hindiSpeak">write</label>
+            </div>
+            <hr />
+            <div id="lang_english">
+              <input
+                type="checkbox"
+                name="language"
+                id="english"
+                value="english"
+                onchange="checkLang(this)"
+              />
+              <label for="english">English</label>
+              <input
+                type="checkbox"
+                name="english_efficiency[]"
+                id="englishRead"
+                value="Read"
+              />
+              <label for="englishRead">read</label>
+              <input
+                type="checkbox"
+                name="english_efficiency[]"
+                id="englishWrite"
+                value="Write"
+              />
+              <label for="englishWrite">speak</label>
+              <input
+                type="checkbox"
+                name="english_efficiency[]"
+                id="englishSpeak"
+                value="Speak"
+              />
+              <label for="englishSpeak">write</label>
+            </div>
+            <hr />
+            <div id="lang_gujarati">
+              <input
+                type="checkbox"
+                name="language"
+                id="gujarati"
+                value="gujarati"
+                onchange="checkLang(this)"
+              />
+              <label for="gujarati">Gujarati</label>
+              <input
+                type="checkbox"
+                name="gujarati_efficiency[]"
+                id="gujaratiRead"
+                value="Read"
+              />
+              <label for="gujaratiRead">read</label>
+              <input
+                type="checkbox"
+                name="gujarati_efficiency[]"
+                id="gujaratiWrite"
+                value="Write"
+              />
+              <label for="gujaratiWrite">speak</label>
+              <input
+                type="checkbox"
+                name="gujarati_efficiency[]"
+                id="gujaratiSpeak"
+                value="Speak"
+              />
+              <label for="gujaratiSpeak">write</label>
+            </div>
+          </fieldset>
+        </div>
+        <%for(const lang in data.language){%> <%const fluency
+        =data.language[lang].fluency%>
+        <script>
+          document.getElementById("<%=lang%>").checked = true;
+        </script>
+        <%fluency.forEach((fluent)=>{%>
+        <script>
+          document.getElementById("<%=lang%><%=fluent%>").checked = true;
+        </script>
+
+        <%})%> <%}%>
+        <div id="technology">
+          <fieldset>
+            <legend>
+              <h3>Technologies known</h3>
+            </legend>
+            <div id="tech_php">
+              <input
+                type="checkbox"
+                name="php"
+                id="php"
+                value="php"
+                onchange="checkTech(this)"
+              />
+              <label for="php">php</label>
+              <input
+                type="radio"
+                name="php"
+                id="phpBeginner"
+                value="Beginner"
+              />
+              <label for="phpBeginner">Beginner</label>
+              <input
+                type="radio"
+                name="php"
+                id="phpMediator"
+                value="Mediator"
+              />
+              <label for="phpMediator">Mediator</label>
+              <input type="radio" name="php" id="phpExpert" value="Expert" />
+              <label for="phpExpert">Expert</label>
+            </div>
+            <hr />
+            <div id="tech_MySql">
+              <input
+                type="checkbox"
+                name="MySql"
+                id="MySql"
+                value="MySql"
+                onchange="checkTech(this)"
+              />
+              <label for="MySql">MySql</label>
+              <input
+                type="radio"
+                name="MySql"
+                id="MySqlBeginner"
+                value="Beginner"
+              />
+              <label for="MySqlBeginner">Beginner</label>
+              <input
+                type="radio"
+                name="MySql"
+                id="MySqlMediator"
+                value="Mediator"
+              />
+              <label for="MySqlMediator">Mediator</label>
+              <input
+                type="radio"
+                name="MySql"
+                id="MySqlExpert"
+                value="Expert"
+              />
+              <label for="MySqlExpert">Expert</label>
+            </div>
+            <hr />
+            <div id="tech_oracle">
+              <input
+                type="checkbox"
+                name="oracle"
+                id="oracle"
+                value="oracle"
+                onchange="checkTech(this)"
+              />
+              <label for="oracle">Oracle</label>
+              <input
+                type="radio"
+                name="oracle"
+                id="oracleBeginner"
+                value="Beginner"
+              />
+              <label for="oracleBeginner">Beginner</label>
+              <input
+                type="radio"
+                name="oracle"
+                id="oracleMediator"
+                value="Mediator"
+              />
+              <label for="oracleMediator">Mediator</label>
+              <input
+                type="radio"
+                name="oracle"
+                id="oracleExpert"
+                value="Expert"
+              />
+              <label for="oracleExpert">Expert</label>
+            </div>
+            <hr />
+            <div id="tech_laravel">
+              <input
+                type="checkbox"
+                name="laravel"
+                id="laravel"
+                value="laravel"
+                onchange="checkTech(this)"
+              />
+              <label for="laravel">Laravel</label>
+              <input
+                type="radio"
+                name="laravel"
+                id="laravelBeginner"
+                value="Beginner"
+              />
+              <label for="laravelBeginner">Beginner</label>
+              <input
+                type="radio"
+                name="laravel"
+                id="laravelMediator"
+                value="Mediator"
+              />
+              <label for="laravelMediator">Mediator</label>
+              <input
+                type="radio"
+                name="laravel"
+                id="laravelExpert"
+                value="Expert"
+              />
+
+              <label for="laravelExpert">Expert</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <%for(const tech in data.technology){%> <%const tech_info =
+        data.technology[tech].tech_name+data.technology[tech].tech_expertise%>
+
+        <script>
+          document.getElementById("<%=tech%>").checked = true;
+          document.getElementById("<%=tech_info%>").checked = true;
+        </script>
+        <%}%>
+        <div id="referenceContact">
+          <fieldset>
+            <legend>
+              <h3>Reference Contacts</h3>
+            </legend>
+            <div class="refcontacts">
+              <table id="refTable">
+                <%for(const each in data.reference){%> <%refCount++%>
+                <tr id="ref<%=refCount%>">
+                  <td><label for="ref">Name:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      name="ref"
+                      id="<%=refCount%>"
+                      onkeyup="enableRef(this)"
+                      value="<%=data.reference[each].ref_name%>"
+                    />
+                    <span class="error"><p id="<%=refCount%>_error"></p></span>
+                  </td>
+
+                  <td><label for="refcontact">Contact:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      name="refcontact"
+                      id="ref<%=refCount%>contact"
+                      value="<%=data.reference[each].ref_contact%>"
+                    />
+                    <span class="error"
+                      ><p id="ref<%=refCount%>contact_error"></p
+                    ></span>
+                  </td>
+                  <td><label for="refrelation">Relation:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      name="refrelation"
+                      id="ref<%=refCount%>relation"
+                      value="<%=data.reference[each].ref_relation%>"
+                    />
+                    <span class="error"
+                      ><p id="ref<%=refCount%>relation_error"></p
+                    ></span>
+                  </td>
+                </tr>
+                <%}%>
+              </table>
+              <div>
+                <button onclick="addRefRow()" type="button">+</button>
+                <button onclick="removeRefRow()" type="button">-</button>
+              </div>
+            </div>
+
+            <br />
+          </fieldset>
+        </div>
+        <div id="preference">
+          <fieldset>
+            <legend>
+              <h3>Preference</h3>
+            </legend>
+            <table>
+              <tr>
+                <td><label for="prefLocation">Prefered location:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="prefLocation"
+                    id="prefLocation"
+                    value="<%=data.preference.location%>"
+                  />
+                  <span class="error"><p id="prefLocation_error"></p></span>
+                </td>
+                <td><label for="currCTC"> Current CTC:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="currCTC"
+                    id="currCTC"
+                    placeholder="LPA"
+                    value="<%=data.preference.curr_ctc%>"
+                  />
+                  <span class="error"><p id="currCTC_error"></p></span>
+                </td>
+                <td><label for="expCTC">Expected CTC:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="expCTC"
+                    id="expCTC"
+                    placeholder="LPA"
+                    value="<%=data.preference.exp_ctc%>"
+                  />
+                  <span class="error"><p id="expCTC_error"></p></span>
+                </td>
+                <td><label for="department">Department:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="department"
+                    id="department"
+                    value="<%=data.preference.department%>"
+                  />
+                  <span class="error"><p id="department_error"></p></span>
+                </td>
+              </tr>
+            </table>
+          </fieldset>
+        </div>
+        <div id="sumbit-div">
+          <input type="submit" id="submit" value="Submit" />
+          <input type="reset" value="Reset" />
+        </div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

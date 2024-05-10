@@ -1,0 +1,229 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+    <link rel="stylesheet" href="data.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="holder">
+        <h3>Abhishek Verma</h3>
+        <h1>Attendence Records</h1>
+        <div class="container">
+          <div class="navigation">
+            <div class="count">
+              <a href="/results?count=1"><button><<</button></a>
+            </div>
+
+            <div class="count">
+              <a
+                href="/results?count=<%=Number(count)-1%>&orderby=<%=orderby%>&field=
+&field=<%=field%>"
+                ><button><</button></a
+              >
+            </div>
+            <div class="count"><%=count%></div>
+
+            <div class="count">
+              <a
+                href="/results?count=<%=Number(count)+1%>&orderby=<%=orderby%>&field=
+&field=<%=field%>"
+                ><button>></button></a
+              >
+            </div>
+            <div class="count">
+              <a
+                href="/results?count=<%=Math.ceil(total/records)%>&orderby=<%=orderby%>&field=<%=field%>"
+                ><button>>></button></a
+              >
+            </div>
+          </div>
+        </div>
+        <table border="1">
+          <tr>
+            <th>
+              <div class="tdDiv">
+                <div>std_id</div>
+                <div>
+                  <a href="/results?count=<%=count%>&orderby=asc&field="
+                    >&#x25B5;</a
+                  >
+                  <a href="/results?count=<%=count%>&orderby=desc&field="
+                    >&#x25BF;</a
+                  >
+                </div>
+              </div>
+            </th>
+            <th>
+              <div class="tdDiv">
+                <div>std_name</div>
+                <div>
+                  <a
+                    href="/results?count=<%=count%>&orderby=asc&field=std_fname"
+                    >&#x25B5;</a
+                  >
+                  <a
+                    href="/results?count=<%=count%>&orderby=desc&field=std_fname"
+                    >&#x25BF;</a
+                  >
+                </div>
+              </div>
+            </th>
+            <th>
+              <div class="tdDiv">
+                <div>gender</div>
+                <div>
+                  <a href="/results?count=<%=count%>&orderby=asc&field=gender"
+                    >&#x25B5;</a
+                  >
+                  <a href="/results?count=<%=count%>&orderby=desc&field=gender"
+                    >&#x25BF;</a
+                  >
+                </div>
+              </div>
+            </th>
+            <th>
+              <div class="tdDiv">
+                <div>e_type</div>
+                <div>
+                  <a href="/results?count=<%=count%>&orderby=asc&field=e_type"
+                    >&#x25B5;</a
+                  >
+                  <a href="/results?count=<%=count%>&orderby=desc&field=e_type"
+                    >&#x25BF;</a
+                  >
+                </div>
+              </div>
+            </th>
+            <th>
+              <div class="tdDiv">
+                <div>p_omarks</div>
+                <div>
+                  <a href="/results?count=<%=count%>&orderby=asc&field=p_omarks"
+                    >&#x25B5;</a
+                  >
+                  <a
+                    href="/results?count=<%=count%>&orderby=desc&field=p_omarks"
+                    >&#x25BF;</a
+                  >
+                </div>
+              </div>
+            </th>
+            <th>
+              <div class="tdDiv">
+                <div>t_omarks</div>
+                <div>
+                  <a href="/results?count=<%=count%>&orderby=asc&field=t_omarks"
+                    >&#x25B5;</a
+                  >
+                  <a
+                    href="/results?count=<%=count%>&orderby=desc&field=t_omarks"
+                    >&#x25BF;</a
+                  >
+                </div>
+              </div>
+            </th>
+            <th>
+              <div class="tdDiv">
+                <div>total_omarks</div>
+                <div>
+                  <a
+                    href="/results?count=<%=count%>&orderby=asc&field=total_omarks"
+                    >&#x25B5;</a
+                  >
+                  <a
+                    href="/results?count=<%=count%>&orderby=desc&field=total_omarks"
+                    >&#x25BF;</a
+                  >
+                </div>
+              </div>
+            </th>
+            <th>
+              <div class="tdDiv">
+                <div>e_date</div>
+                <div>
+                  <a href="/results?count=<%=count%>&orderby=asc&field=e_date"
+                    >&#x25B5;</a
+                  >
+                  <a href="/results?count=<%=count%>&orderby=desc&field=e_date"
+                    >&#x25BF;</a
+                  >
+                </div>
+              </div>
+            </th>
+            <th>
+              <div class="tdDiv">
+                <div>dob</div>
+                <div>
+                  <a href="/results?count=<%=count%>&orderby=asc&field=dob"
+                    >&#x25B5;</a
+                  >
+                  <a href="/results?count=<%=count%>&orderby=desc&field=dob"
+                    >&#x25BF;</a
+                  >
+                </div>
+              </div>
+            </th>
+            <th>
+              <div class="tdDiv">
+                <div>city</div>
+                <div>
+                  <a href="/results?count=<%=count%>&orderby=asc&field=city"
+                    >&#x25B5;</a
+                  >
+                  <a href="/results?count=<%=count%>&orderby=desc&field=city"
+                    >&#x25BF;</a
+                  >
+                </div>
+              </div>
+            </th>
+            <th>
+              <div class="tdDiv">
+                <div>country</div>
+                <div>
+                  <a href="/results?count=<%=count%>&orderby=asc&field=country"
+                    >&#x25B5;</a
+                  >
+                  <a href="/results?count=<%=count%>&orderby=desc&field=country"
+                    >&#x25BF;</a
+                  >
+                </div>
+              </div>
+            </th>
+            <th>
+              <div class="tdDiv">
+                <div>sem</div>
+                <div>
+                  <a href="/results?count=<%=count%>&orderby=asc&field=sem"
+                    >&#x25B5;</a
+                  >
+                  <a href="/results?count=<%=count%>&orderby=desc&field=sem"
+                    >&#x25BF;</a
+                  >
+                </div>
+              </div>
+            </th>
+          </tr>
+
+          <%result.forEach(function (element) {%>
+          <tr>
+            <td><%=element.std_id%></td>
+            <td><%=element.std_fname%> <%=element.std_lname%></td>
+            <td><%=element.gender%></td>
+            <td><%=element.e_type%></td>
+            <td><%=element.p_omarks%></td>
+            <td><%=element.t_omarks%></td>
+            <td><%=element.total_omarks%></td>
+            <td><%=element.e_date%></td>
+            <td><%=element.dob%></td>
+            <td><%=element.city%></td>
+            <td><%=element.country%></td>
+            <td><%=element.sem%></td>
+          </tr>
+          <% }); %>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

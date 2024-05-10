@@ -1,0 +1,78 @@
+<tr>
+  <td>
+    <label for="state"
+      >State<span class="redstar"><sup>*</sup></span
+      >:</label
+    >
+  </td>
+  <td>
+    <select name="states" id="states" onchange="selectedState(this)">
+      <option>--Select State--</option>
+    </select>
+    <span class="error"><p id="state_error"></p></span>
+  </td>
+  <td>
+    <label for="city"
+      >City<span class="redstar"><sup>*</sup></span
+      >:</label
+    >
+  </td>
+  <td>
+    <select name="cities" id="cities">
+      <option>--Select City--</option>
+    </select>
+    <span class="error"><p id="city_error"></p></span>
+  </td>
+  <td>
+    <label for="zipcode"
+      >Zip code<span class="redstar"><sup>*</sup></span
+      >:</label
+    >
+  </td>
+  <td>
+    <input type="text" id="zipcode" tabindex="10" name="zipcode" />
+    <span class="error"><p id="zipcode_error"></p></span>
+  </td>
+</tr>
+<tr>
+  <td>
+    <label for="dob"
+      >Date of birth<span class="redstar"><sup>*</sup></span
+      >:</label
+    >
+  </td>
+  <td>
+    <input
+      tabindex="13"
+      type="date"
+      name="dob"
+      id="dob"
+      name="dob"
+      placeholder="dd-mm-yyyy"
+    />
+    <span class="error"><p id="dob_error"></p></span>
+  </td>
+  <td>
+    <label for="gender"
+      >Gender<span class="redstar"><sup>*</sup></span
+      >:</label
+    >
+  </td>
+  <td>
+    <input type="radio" id="male" value="male" name="gender" />
+    <label for="male">Male</label><br />
+    <input type="radio" id="female" value="female" name="gender" />
+
+    <label for="female">Female</label><br />
+  </td>
+  <td><label>Relationship status:</label></td>
+  <td>
+    <select name="relationship" id="relationship">
+      <option id="single" value="single">Single</option>
+      <option id="married" value="married">Married</option>
+    </select>
+  </td>
+</tr>
+
+
+

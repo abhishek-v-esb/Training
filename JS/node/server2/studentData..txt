@@ -1,0 +1,3 @@
+{"userId":"1","name":"Abhishek","email":"abhishek@gmail.com","education":[{"board":"CBSE","passingYear":"2020"},{"board":"GTU","passingYear":"2023"}]}
+{"userId":"2","name":"jil","email":"jil@gmail.com","education":[{"board":"CBSE","passingYear":"2020"},{"board":"GTU","passingYear":"2023"}]}
+{"userId":"3","name":"pal","email":"pal@gmail.com","education":[{"board":"CBSE","passingYear":"2020"},{"board":"GTU","passingYear":"2023"}]}

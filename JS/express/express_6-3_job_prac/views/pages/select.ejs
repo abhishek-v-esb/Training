@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <%if(type=="dropdown"){%>
+      <div>
+        <%=select%>:
+
+        <select name="<%=select%>" id="<%=select%>">
+          <%result.forEach((element) => {%>
+          <option value="<%=element.option_name%>">
+            <%=element.option_name%>
+          </option>
+          <%});%>
+        </select>
+      </div>
+      <%}else{%>
+      <div>
+        <%=select%>: <%result.forEach((element) => {%>
+        <input
+          type="<%=type%>"
+          id="<%=element.option_name%>"
+          name="<%=select%>"
+        />
+        <label for="<%=element.option_name%>"><%=element.option_name%></label>
+        <%});%>
+      </div>
+      <%}%>
+    </form>
+  </body>
+</html>

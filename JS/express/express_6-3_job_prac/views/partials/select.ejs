@@ -1,0 +1,16 @@
+<%if(type=="dropdown"){%>
+
+<select name="<%=select%>" id="<%=select%>">
+  <%data.forEach((element) => {%>
+  <option value="<%=element%>" id="<%=element%>"><%=element%></option>
+  <%});%>
+</select>
+
+<%}else{%>
+<div>
+  <%let count = 1%> <%data.forEach((element) => {%>
+  <input type="<%=type%>" name="<%=select%>" value="<%=element%>" />
+  <label for="<%=element%>"><%=element%></label>
+  <%count++%> <%});%>
+</div>
+<%}%>

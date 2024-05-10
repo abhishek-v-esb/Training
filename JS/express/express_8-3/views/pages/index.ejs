@@ -1,0 +1,139 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="getPostData(pageNum)">
+    <div class="container">
+      <div id="navSec">
+        <div id="navigation">
+          <button id="dec" onclick="decPage()"><</button>
+          <button id="page">1</button>
+          <button id="inc" onclick="incPage()">></button>
+        </div>
+      </div>
+      <table id="table" border="1">
+        <tr>
+          <th>User Id</th>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Body</th>
+        </tr>
+        <tr class="hovered"></tr>
+      </table>
+    </div>
+    <script>
+      const table = document.getElementById("table");
+      const tr = document.createDocumentFragment();
+      const url = "https://jsonplaceholder.typicode.com/posts";
+
+      let post;
+      let entries = 0;
+      const records = 10;
+      const page = document.getElementById("page");
+      let pageNum = parseInt(page.innerHTML);
+      // pageActive(pageNum);
+      function getPostData(pageNum) {
+        fetch(url)
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            posts = data;
+            addData(posts, pageNum);
+          })
+
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
+
+      function addData(posts, page) {
+        let trs = Array.from(document.getElementsByClassName("hovered"));
+        // console.log(trs);
+        trs.forEach((element) => {
+          element.parentNode.removeChild(element);
+        });
+
+        // console.log(posts, page);
+        posts.forEach((element) => {
+          if (
+            element.id <= page * records &&
+            element.id >= page * records - 9
+          ) {
+            let tr = document.createElement("tr");
+            tr.onclick = redirect;
+            tr.classList.add("hovered");
+
+            let userId = document.createElement("td");
+            let id = document.createElement("td");
+            let title = document.createElement("td");
+            let body = document.createElement("td");
+            userId.innerHTML = `${element.userId}`;
+            id.innerHTML = `${element.id}`;
+            id.id = `${element.id}`;
+            title.innerHTML = `${element.title}`;
+            body.innerHTML = `${element.body}`;
+
+            userId.classList.add(`${element.id}`);
+            id.classList.add(`${element.id}`);
+            title.classList.add(`${element.id}`);
+            body.classList.add(`${element.id}`);
+            tr.id = `${element.id}`;
+            tr.userId = `${element.userId}`;
+            tr.appendChild(userId);
+            tr.appendChild(id);
+            tr.appendChild(title);
+            tr.appendChild(body);
+            table.appendChild(tr);
+          }
+        });
+      }
+      function redirect() {
+        // console.log(postId);
+        // console.log(postId);
+
+        const redirectUrl = `/postdetails?id=${this.id}&userid=${this.userId}`;
+        window.open(redirectUrl);
+      }
+      function incPage() {
+        const endPage = records;
+
+        // console.log(endPage);
+
+        pageNum = parseInt(page.innerHTML);
+
+        if (pageNum < endPage) {
+          page.innerHTML = `${pageNum + 1}`;
+        } else {
+        }
+        getPostData(pageNum + 1);
+        // pageActive(pageNum);
+      }
+      function decPage() {
+        pageNum = parseInt(page.innerHTML);
+
+        if (pageNum <= 1) {
+        } else {
+          page.innerHTML = `${pageNum - 1}`;
+        }
+        getPostData(pageNum - 1);
+        pageActive(pageNum);
+      }
+
+      function pageActive(pageNum) {
+        if (pageNum == 1) {
+          document.getElementById("dec").disabled = true;
+        }
+        if (pageNum == 10) {
+          document.getElementById("inc").disabled = true;
+        }
+        if (pageNum != 1 && pageNum != 10) {
+          document.getElementById("inc").disabled = false;
+        }
+      }
+    </script>
+  </body>
+</html>

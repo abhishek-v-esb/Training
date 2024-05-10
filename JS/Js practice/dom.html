@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <div id="first">
+        this is first div
+    </div>
+    <div id="second">
+        this is second div
+    </div>
+    <div id="container">
+        <div id="third">this is third div</div>
+        <div id="fourth">this is 4th div</div>
+    </div>
+    <script>
+        
+        const body = document.getElementsByTagName("body")
+        const div = document.getElementsByTagName("div")
+        const container = document.getElementById("container")
+        const first= document.querySelector("#first")
+        const second= document.querySelector("#second")
+        const third= document.querySelector("#third")
+        const fourth= document.querySelector("#fourth")
+
+        // second.value=second.baseURI;
+        // console.log(second.value)
+
+        // const children = body[0].childNodes;
+        // console.log(children)
+
+        // const firstchild = container.firstChild.nodeName;
+        // console.log(firstchild)
+
+        // console.log(first.isConnected)
+
+        // console.log(fourth.nodeType)
+
+        // console.log(Text.nodeValue)
+
+        // console.log(second.ownerDocument)
+        // console.log(document.documentElement)
+
+        // console.log(first.parentElement)
+        // console.log(fourth.parentElement)
+        // console.log(body[0].parentElement)
+
+        // console.log(first.parentNode)
+        // console.log(fourth.parentNode)
+        // console.log(body[0].parentNode)
+
+        // console.log(container.cloneNode(true))
+
+        // console.log(first.compareDocumentPosition(second))
+
+        // console.log(container.contains(first))
+        // console.log(container.contains(fourth))
+        
+        console.log(fourth.getRootNode())
+        console.log(container.hasChildNodes(third))
+
+
+    </script>
+</body>
+</html>

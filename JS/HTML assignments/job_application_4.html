@@ -1,0 +1,449 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>job Application</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <h3>
+        <center><u>Job Application</u></center>
+      </h3>
+      <form action="">
+        <div id="basicDetails">
+          <fieldset>
+            <legend>
+              <h3><em>Basic details</em></h3>
+            </legend>
+            <table>
+              <tr>
+                <td><label for="firstName">First name</label></td>
+                <td>
+                  <input
+                    type="text"
+                    id="firstName"
+                    value="Abhishek"
+                    tabindex="1"
+                    autofocus
+                  />
+                </td>
+                <td><label for="lastname">Last name:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    id="lastName"
+                    value="Verma"
+                    readonly
+                    tabindex="2"
+                  />
+                </td>
+                <td><label>Designation:</label></td>
+                <td><input type="text" tabindex="3" /></td>
+              </tr>
+              <tr>
+                <td><label for="textarea1">Address 1:</label></td>
+                <td>
+                  <textarea
+                    rows="5"
+                    cols="50"
+                    id="textarea1"
+                    tabindex="7"
+                  ></textarea>
+                </td>
+                <td><label for="textarea2">Address 2:</label></td>
+                <td>
+                  <textarea
+                    rows="5"
+                    cols="50"
+                    id="textarea2"
+                    tabindex="8"
+                  ></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td><label for="email">Email:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    tabindex="9"
+                    id="email"
+                    placeholder="xyz@email.com"
+                    size="5"
+                  />
+                </td>
+                <td><label for="phone">Phone:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    tabindex="10"
+                    id="phone"
+                    placeholder="+91-0000000000"
+                    maxlength="14"
+                    autocomplete="on"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label>City:</label></td>
+                <td>
+                  <select
+                    size="2"
+                    multiple
+                    name="cities"
+                    id="cities_names"
+                    tabindex="11"
+                  >
+                    <option selected value="ahmedabad">Ahmedabad</option>
+                    <option value="gandhinagar">Gandhinagar</option>
+                    <option value="bhavnagar">Bhavnagar</option>
+                  </select>
+                </td>
+                <td><label>State:</label></td>
+                <td><input tabindex="12" type="text" /></td>
+                <td><label>Zip code:</label></td>
+                <td><input tabindex="13" type="text" /></td>
+              </tr>
+              <tr>
+                <td><label>Gender:</label></td>
+                <td>
+                  <select name="gender" size="2" id="genderType" tabindex="4">
+                    <option value="male">Male</option>
+                    <option value="female">female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </td>
+                <td><label>Relationship status:</label></td>
+                <td>
+                  <select
+                    tabindex="5"
+                    name="relationship"
+                    id="relationshipType"
+                  >
+                    <option selected value="unmarried" selected>
+                      Unmarried
+                    </option>
+                    <option value="married" disabled>Married</option>
+                    <option value="divorced">Divorced</option>
+                  </select>
+                </td>
+                <td><label>Date of birth:</label></td>
+                <td>
+                  <input
+                    tabindex="6"
+                    type="text"
+                    name="dob"
+                    id="dob"
+                    placeholder="dd-mm-yyyy"
+                  />
+                </td>
+              </tr>
+            </table>
+          </fieldset>
+        </div>
+        <br /><br />
+
+        <div id="education">
+          <fieldset>
+            <legend>
+              <h3><cite>Education</cite></h3>
+            </legend>
+
+            <div id="ssc">
+              <abbr title="Seconday School Certificate">SSC</abbr>
+              <br />
+              <label for="boardNameSsc">Name of board:</label>
+              <input data type="text" name="boardName" id="boardNameSsc" />
+              <label for="passingYearSsc">Passing year:</label>
+              <input
+                type="text"
+                name="passingYear"
+                id="passingYearSsc"
+                placeholder="dd-mm-yyyy"
+              />
+              <label for="passingPercentageSsc">Passing percentage:</label>
+              <input
+                type="text"
+                name="passingPercentage"
+                id="passingPercentageSsc"
+                max="100"
+                min="30"
+                placeholder="minimum 30"
+              />
+            </div>
+            <hr />
+            <div id="hsc">
+              <abbr title="Higher School Certificate">HSC</abbr>
+              <br />
+              <label for="boardNameHsc">Name of board:</label>
+              <input type="text" name="boardName" id="boardNameHsc" />
+              <label for="passingYearHsc">Passing year:</label>
+              <input
+                type="text"
+                name="passingYear"
+                id="passingYearHsc"
+                placeholder="dd-mm-yyyy"
+              />
+              <label for="passingPercentageHsc">Passing percentage:</label>
+              <input
+                type="text"
+                name="passingPercentage"
+                id="passingPercentageHsc"
+                max="100"
+                min="30"
+                placeholder="minimum 30"
+              />
+            </div>
+            <hr />
+
+            <div id="bachelor">
+              Bachelor
+              <br />
+              <label for="boardNameBach">Name of board:</label>
+              <input type="text" name="boardName" id="boardNameBach" />
+              <label for="passingYearBach">Passing year:</label>
+              <input
+                type="text"
+                name="passingYear"
+                id="passingYearBach"
+                placeholder="dd-mm-yyyy"
+              />
+              <label for="passingPercentageBach">Passing percentage:</label>
+              <input
+                type="text"
+                name="passingPercentage"
+                id="passingPercentageBach"
+                max="100"
+                min="30"
+                placeholder="minimum 30"
+              />
+            </div>
+            <hr />
+
+            <div id="master">
+              Master
+              <br />
+              <label for="boardNameMas">Name of board:</label>
+              <input type="text" name="boardName" id="boardNameMas" />
+              <label for="passingYearMas">Passing year:</label>
+              <input
+                type="text"
+                name="passingYear"
+                id="passingYearMas"
+                placeholder="dd-mm-yyyy"
+              />
+              <label for="passingPercentageMas">Passing percentage:</label>
+              <input
+                type="text"
+                name="passingPercentage"
+                id="passingPercentageMas"
+                max="100"
+                min="30"
+                placeholder="minimum 30"
+              />
+            </div>
+          </fieldset>
+        </div>
+        <br /><br />
+
+        <div id="workExp">
+          <fieldset>
+            <legend>
+              <h3><i>Work experience</i></h3>
+            </legend>
+
+            <div class="company">
+              <label for="companyName1">Company:</label>
+              <input
+                list="company"
+                type="text"
+                name="companyName"
+                id="companyName1"
+              />
+              <datalist id="company">
+                <option value="microsoft"></option>
+                <option value="google"></option>
+                <option value="meta"></option>
+              </datalist>
+              <label for="designation1">Designation:</label>
+              <input type="text" name="designation" id="designation1" />
+              <label for="from1">From:</label>
+              <input
+                type="text"
+                name="from"
+                id="from1"
+                placeholder="dd-mm-yyyy"
+              />
+              <label for="to1">To:</label>
+              <input type="text" name="to" id="to1" placeholder="dd-mm-yyyy" />
+            </div>
+            <br /><br />
+            <div class="company">
+              <label for="companyName2">Company:</label>
+              <input
+                list="company"
+                type="text"
+                name="companyName"
+                id="companyName2"
+              />
+              <datalist id="company">
+                <option value="microsoft"></option>
+                <option value="google"></option>
+                <option value="meta"></option>
+              </datalist>
+              <label for="designation2">Designation:</label>
+              <input type="text" name="designation" id="designation2" />
+              <label for="form2">From:</label>
+              <input
+                type="text"
+                name="from"
+                id="from2"
+                placeholder="dd-mm-yyyy"
+              />
+              <label for="to2">To:</label>
+              <input type="text" name="to" id="to2" placeholder="dd-mm-yyyy" />
+            </div>
+          </fieldset>
+        </div>
+        <br /><br />
+
+        <div id="lanuage">
+          <fieldset>
+            <legend>
+              <h3>Language known</h3>
+            </legend>
+            <div id="lang_hindi">
+              <input type="checkbox" name="hindi" id="hindi" />
+              <label for="hindi">Hindi</label>
+              <input type="checkbox" name="hindi" />
+              <label for="hindi">read</label>
+              <input type="checkbox" name="hindi" />
+              <label for="hindi">speak</label>
+              <input type="checkbox" name="hindi" />
+              <label for="hindi">write</label>
+            </div>
+            <hr />
+            <div id="english">
+              <input type="checkbox" name="english" />
+              <label for="hindi">English</label>
+              <input type="checkbox" name="english" />
+              <label for="hindi">read</label>
+              <input type="checkbox" name="english" />
+              <label for="hindi">speak</label>
+              <input type="checkbox" name="english" />
+              <label for="hindi">write</label>
+            </div>
+            <hr />
+            <div id="gujarati">
+              <input type="checkbox" name="gujarati" />
+              <label for="hindi">Gujarati</label>
+              <input type="checkbox" name="gujarati" />
+              <label for="hindi">read</label>
+              <input type="checkbox" name="gujarati" />
+              <label for="hindi">speak</label>
+              <input type="checkbox" name="gujarati" />
+              <label for="hindi">write</label>
+            </div>
+          </fieldset>
+        </div>
+        <br /><br />
+        <div id="technology">
+          <fieldset>
+            <legend>
+              <h3>Technologies known</h3>
+            </legend>
+            <div id="php">
+              <input type="checkbox" name="php" id="php" />
+              <label for="php">php</label>
+              <input type="radio" name="php" id="phpBeginner" />
+              <label for="phpBeginner">Beginner</label>
+              <input type="radio" name="php" id="phpMediator" />
+              <label for="phpMediator">Mediator</label>
+              <input type="radio" name="php" id="phpExpert" />
+              <label for="phpExpert">Expert</label>
+            </div>
+            <hr />
+            <div id="MySql">
+              <input type="checkbox" name="MySql" id="php" />
+              <label for="MySql">MySql</label>
+              <input type="radio" name="MySql" id="MySqlBeginner" />
+              <label for="MySqlBeginner">Beginner</label>
+              <input type="radio" name="MySql" id="MySqlMediator" />
+              <label for="MySqlMediator">Mediator</label>
+              <input type="radio" name="MySql" id="MySqlExpert" />
+              <label for="MySqlExpert">Expert</label>
+            </div>
+            <hr />
+            <div id="oracle">
+              <input type="checkbox" name="oracle" id="oracle" />
+              <label for="oracle">Oracle</label>
+              <input type="radio" name="oracle" id="oracleBeginner" />
+              <label for="oracleBeginner">Beginner</label>
+              <input type="radio" name="oracle" id="oracleMediator" />
+              <label for="oracleMediator">Mediator</label>
+              <input type="radio" name="oracle" id="oracleExpert" />
+              <label for="oracleExpert">Expert</label>
+            </div>
+            <hr />
+            <div id="laravel">
+              <input type="checkbox" name="laravel" id="laravel" />
+              <label for="laravel">Laravel</label>
+              <input type="radio" name="laravel" id="laravelBeginner" />
+              <label for="laravelBeginner">Beginner</label>
+              <input type="radio" name="laravel" id="laravelMediator" />
+              <label for="laravelMediator">Mediator</label>
+              <input type="radio" name="laravel" id="laravelExpert" />
+              <label for="laravelExpert">Expert</label>
+            </div>
+          </fieldset>
+        </div>
+        <br /><br />
+        <div id="referenceContact">
+          <fieldset>
+            <legend>
+              <h3>Reference Contacts</h3>
+            </legend>
+            <div class="refContacts">
+              <label for="refName1">Name:</label>
+              <input type="text" name="refName" id="refName1" />
+              <label for="refContact1">Contact:</label>
+              <input type="text" name="refContact" id="refContact1" />
+              <label for="refRelation1">Relation:</label>
+              <input type="text" name="refRelation" id="refRelation1" />
+            </div>
+            <br />
+            <div class="refContacts">
+              <label for="refName2">Name:</label>
+              <input type="text" name="refName" id="refName2" />
+              <label for="refContact2">Contact:</label>
+              <input type="text" name="refContact" id="refContact2" />
+              <label for="refRelation2">Relation:</label>
+              <input type="text" name="refRelation" id="refRelation2" />
+            </div>
+          </fieldset>
+        </div>
+        <br /><br />
+        <div id="preference">
+          <fieldset>
+            <legend>
+              <h3>Preference</h3>
+            </legend>
+            <label for="prefLocation">Prefered location:</label>
+            <input type="text" name="prefLocation" id="prefLocation" />
+            <label for="currCTC"> Current CTC:</label>
+            <input type="text" name="currCTC" id="currCTC" placeholder="LPA" />
+            <label for="expCTC">Expected CTC:</label>
+            <input type="text" name="expCTC" id="expCTC" placeholder="LPA" />
+            <label for="department">Department:</label>
+            <input type="text" name="department" id="department" />
+          </fieldset>
+        </div>
+        <br /><br />
+        <div id="sumbit">
+          <input type="submit" value="Submit" />
+          <input type="reset" value="Reset" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

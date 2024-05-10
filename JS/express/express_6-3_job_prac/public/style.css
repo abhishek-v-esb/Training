@@ -1,0 +1,25 @@
+.redstar {
+  color: red;
+  font-size: small;
+}
+
+.company {
+  display: flex;
+  justify-content: space-between;
+}
+.refcontacts {
+  display: flex;
+  justify-content: space-between;
+}
+button {
+  height: 30px;
+  width: 30px;
+}
+p {
+  margin: 0 auto;
+  font-size: small;
+  color: red;
+}
+.active {
+  display: none;
+}

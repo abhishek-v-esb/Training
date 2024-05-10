@@ -1,0 +1,19 @@
+.container {
+  height: 100vh;
+}
+
+#time {
+  display: flex;
+  align-items: center;
+}
+
+.time-div {
+  margin: 20px auto;
+}
+
+.inputs,
+option {
+  height: 45px;
+  font-size: large;
+  padding: 10px;
+}
