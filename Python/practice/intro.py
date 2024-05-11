@@ -63,4 +63,9 @@ toStr = str(floatingPoint)
 # print(random.randrange(1,10)) # print random number
 
 
+# *==== inputs ====
 
+inp1 = input("enter:")
+print(inp1)
+inp2 = int(input("enter a number:"))
+print(inp2)
