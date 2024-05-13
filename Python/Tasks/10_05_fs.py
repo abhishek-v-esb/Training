@@ -1,41 +1,69 @@
 import os
 
-# directoryPath = input("enter the path of directory:")
-# fileName = input("enter filename:")
-# fileExtension = input("enter file extension:")
-# size = int(input("enter size of file:"))
-
-directoryPath = "/home/abhishek-verma/Desktop/Training/Python/practice/"
-fileName = "testfile"
-fileExtension = "txt"
-size = 78
-
-
-extensions = ["txt","pdf","csv","doc"]
-
-if fileExtension not in extensions:
-    print("invalid extension")
+directoryPath = input("enter the path of directory:")
+fileName = input("enter filename:")
+fileExtension = input("enter file extension:")
+size = float(input("enter size of file (mb):"))
 
 if  size < 0: 
-    print("invalid size")
-    
-f = open(f"{directoryPath}{fileName}.{fileExtension}","r")
-fileData = f.read()
-print(fileData)
+    print("invalid size") 
 
-edit = input("you want to edit file ? (Y/N)")
-if edit == "Y" or edit == "y" :
-    action = input("action (copy/move/delete):")
-    if action == "copy":
-        fcopy = open(f"{directoryPath}{fileName}_copy.{fileExtension}","w")
-        fcopy.write(fileData)
-    elif action == "move":
-        newPath = input("enter file path:")
-        fmove = open(f"{newPath}{fileName}.{fileExtension}","w")
-        fmove.write(fileData)
-        os.remove(f"{directoryPath}{fileName}.{fileExtension}")
-    elif action == "delete":
-        os.remove(f"{directoryPath}{fileName}.{fileExtension}")
+
+def copyFile(directoryPath,copyPath,file):
+    origFile = open(f"{directoryPath}/{file}","r")
+    fileData = origFile.read()
+    copyFile = open(f"{copyPath}/{file}","w")
+    copyFile.write(fileData)
+    
+def main():
+    filteredFiles = []
+
+    for files in allFiles:
+        if fileName in files and fileExtension in files:
+            fsize = (os.path.getsize(f"{directoryPath}/{files}"))
+            # print(fsize/1024/1024)
+            if(size == fsize):
+                filteredFiles.append(files)
+            
+
+    if(len(filteredFiles)==0):
+        print("file not found")
     else:
-        print("no such action possible")
-f.close()
+        print(filteredFiles)
+        
+    try:
+        edit = input("you want to edit file ? (Y/N)")
+        if edit == "Y" or edit == "y" :
+            action = input("action (copy/move/delete):")
+            if action == "copy":
+                copyPath = input("enter copy path:")
+                for file in filteredFiles:
+                    copyFile(directoryPath,copyPath,file)
+                print("files copied")
+            
+            elif action == "move":
+                movePath = input("enter move path:")
+                for file in filteredFiles:
+                    copyFile(directoryPath,movePath,file)
+                    os.remove(f"{directoryPath}/{file}")
+                print("files moved")
+            
+            elif action == "delete":
+                for file in filteredFiles:
+                    os.remove(f"{directoryPath}/{file}")
+                print("files deleted")
+            else:
+                print("no such action possible")
+        
+    except:
+        print("unable to perform action")
+
+
+
+try:
+    allFiles = os.listdir(f"{directoryPath}")
+    main()
+except:
+    print("file not found")
+
+
